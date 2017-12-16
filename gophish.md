@@ -62,6 +62,6 @@ Keep in mind that scheduling uses the time on **your** device and not the server
 | {{.Email}} | The target's email address |
 | {{.From}} | The spoofed sender |
 | {{.TrackingURL}} | The URL to the tracking handler |
-| {{.Tracker}} | An alias for <img src=" {{.TrackingURL}} "/> |
+| {{.Tracker}} | An alias for `<img src=" {{.TrackingURL}} "/>` |
 | {{.URL}} | The phishing URL |
 ------------------------------
