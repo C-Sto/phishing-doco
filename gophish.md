@@ -44,7 +44,7 @@ Put your victims in here. You can also import a bunch of them, but your .csv hea
 Pretttty much as it says. Email templates to send. You can import an email by clicking on the 'Import Email' button when creating a template. You can personalise emails using the variable reference below.
 
 ##### Landing Pages
-Simply, this is the page that a victim will visit, allowing you to harvest their sweet, sweet creds. You can clone a site by click on 'Import Site' when you create a new Landing Page. I'd recommending adding in `title` and `alt` tags to links and images. MailGuard drops the score of emails without it and subsequently, your mail won't be delivered. You can personalise emails by using the variable reference below.
+Simply, this is the page that a victim will visit, allowing you to harvest their sweet, sweet creds. You can clone a site by click on 'Import Site' when you create a new Landing Page. I'd recommending adding in `title` and `alt` tags to links and images. MailGuard drops the score of emails without it and subsequently, your mail won't be delivered. You can personalise landing pages by using the variable reference below.
 
 ##### Sending Profiles
 This is where you set up your sender you would like to impersonate. You also need to provide your SMTP relay API key when creating a sending profile. I'd recommend sending a test email just to make sure the your relay works as expected and that your sending appears how you want.
