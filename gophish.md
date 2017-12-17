@@ -4,7 +4,8 @@
 *This is pretty gross. You can make it nicer by symlinking a bunch of stuff.*
 
 **You'll need to make a few adaptions to the following because you (a) hopefully won't run this shit as `root`, and (b) will have a different domain**
-### A video of everything below: [![Phisherooni](https://img.youtube.com/vi/v7TGMhxjl0k/0.jpg)](https://www.youtube.com/watch?v=v7TGMhxjl0k)
+### A video of everything below:
+[![Phisherooni](https://img.youtube.com/vi/v7TGMhxjl0k/0.jpg)](https://www.youtube.com/watch?v=v7TGMhxjl0k)
 
 ##### Configuring your environment
 ###### Setting up golang
