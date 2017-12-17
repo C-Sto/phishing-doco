@@ -5,7 +5,7 @@
 
 **You'll need to make a few adaptions to the following because you (a) hopefully won't run this shit as `root`, and (b) will have a different domain**
 ### A video of everything below:
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/v7TGMhxjl0k" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+[![Phisherooni](https://img.youtube.com/vi/v7TGMhxjl0k/0.jpg)](https://www.youtube.com/watch?v=v7TGMhxjl0k)
 
 ##### Configuring your environment
 ###### Setting up golang
