@@ -4,6 +4,9 @@
 *This is pretty gross. You can make it nicer by symlinking a bunch of stuff.*
 
 **You'll need to make a few adaptions to the following because you (a) hopefully won't run this shit as `root`, and (b) will have a different domain**
+### A video of everything below:
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/v7TGMhxjl0k" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
 ##### Configuring your environment
 ###### Setting up golang
 - `apt-get update && apt-get -y upgrade && apt-get -y install golang`
