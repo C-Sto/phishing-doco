@@ -21,7 +21,7 @@
 Config: `$GOPATH/src/github.com/gophish/gophish/config.json`
 ###### Certificate stuff (generate certs)
 - `apt-get -y install letsencrypt`
-- `letsencrypt certonly --manual -d acme.net`
+- `letsencrypt certonly --manual -d acme.net --register-unsafely-without-email`
 ###### Make certs work with Gophish
 -  Change `"cert_path"` point to to `/etc/letsencrypt/live/acme.net/cert.pem`
 -  Change `"key_path"` point to `/etc/letsencrypt/live/acme.net/privkey.pem`
