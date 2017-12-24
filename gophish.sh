@@ -9,6 +9,7 @@ RESET="\033[00m"       # Normal
 
 if [ -z $1 ] ; then
     echo Usage: $(which bash) gophish.sh domain
+    echo Where domain is the domain-name pointing to the current box
     exit
 fi
 
