@@ -92,7 +92,7 @@ echo >&7
 pkill python
 killall python
 cd ~
-rm -rf serve
+rm -rf serve cert.log
 
 echo -e "${GREEN}[+]${RESET} Linking certs"
 echo 'Linking certificates'
