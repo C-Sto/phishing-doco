@@ -26,7 +26,7 @@ Config: `$GOPATH/src/github.com/gophish/gophish/config.json`
 - `apt-get -y install letsencrypt`
 - `letsencrypt certonly --manual -d acme.net --register-unsafely-without-email`
 ###### Make certs work with Gophish
--  Change `"cert_path"` point to to `/etc/letsencrypt/live/acme.net/cert.pem`
+-  Change `"cert_path"` point to `/etc/letsencrypt/live/acme.net/cert.pem`
 -  Change `"key_path"` point to `/etc/letsencrypt/live/acme.net/privkey.pem`
 ###### Make the gophish admin page accessible externally (no time for X forwarding)
 - Change `127.0.0.1` to your external IP (or `0.0.0.0` lol): `sed -i 's/127.0.0.1/0.0.0.0/g' $GOPATH/src/github.com/gophish/gophish/config.json`
