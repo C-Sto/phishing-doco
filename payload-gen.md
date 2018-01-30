@@ -6,8 +6,7 @@ It's very easy to generate shell stagers/payloads with Empire. You can create of
 ###### Create a listener:
 - Enter the listeners menu: `listeners`
 - Choose a listener to create: `uselistener http` - Press <TAB> to see more than just http
-- View your listener info: `info`
-_Note that you can add certs for communication over TLS_
+- View your listener info: `info` (_Note that you can add certs for communication over TLS_)
 - And change accordingly: `set Name acmeHTTP`
 - Execute your listener: `execute`
 ###### Create a stager that uses the newly created listener:
