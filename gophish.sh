@@ -28,7 +28,7 @@ apt-get -y install python >> ~/gophish.log
 
 # Installing certbot
 echo -e "${GREEN}[+]${RESET} Installing certbot"
-apt-get -y install certbot >> ~/gophish.log
+apt-get -y install letsencrypt >> ~/gophish.log
 
 # Get username and home dir
 user=$(whoami)
