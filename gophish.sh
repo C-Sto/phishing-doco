@@ -9,7 +9,7 @@ RESET="\033[00m"       # Normal
 
 if [ -z $1 ] ; then
     echo Usage: $(which bash) gophish.sh domain
-    echo Where domain is the domain-name pointing to the current box
+    echo Where domain is the domain-name pointing to the current box. Specify multiple by separating them with a space.
     exit
 fi
 
@@ -20,7 +20,9 @@ apt-get -y upgrade >> ~/gophish.log
 
 # Installing golang
 echo -e "${GREEN}[+]${RESET} Installing golang"
-apt-get -y install golang >> ~/gophish.log
+apt-get -y install golang-1.9-go >> ~/gophish.log
+echo "export PATH=$PATH:/usr/lib/go-1.9/bin" >> ~/.bashrc
+export PATH=$PATH:/usr/lib/go-1.9/bin
 
 # Installing python
 echo -e "${GREEN}[+]${RESET} Installing python"
@@ -66,33 +68,9 @@ sed -i 's/gophish_admin.key/privkey.pem/g' $GOPATH/src/github.com/gophish/gophis
 sed -i 's/example.key/privkey.pem/g' $GOPATH/src/github.com/gophish/gophish/config.json
 
 echo -e "${GREEN}[+]${RESET} Generating certificates"
-# Set up requirements
-cd ~
-mkdir -p serve/.well-known/acme-challenge/
-cd serve
-python -m SimpleHTTPServer 80 &
-cd .well-known/acme-challenge
-mkfifo gophisho
-
 # do the thing
-letsencrypt certonly --manual --register-unsafely-without-email -d $1 > ~/cert.log < gophisho &
-exec 7>gophisho
-echo 'A' >&7
-echo 'Y' >&7
-sleep 5
-contents=$(grep -A 2 'just this data:' ~/cert.log | tail -n 1)
-filename=$(grep -A 2 'server at this URL:' ~/cert.log | tail -n 1 | grep -o -E '[A-Za-z0-9]*$')
-echo $contents > $filename
-echo >&7
-sleep 10
-echo >&7
-
-# Cleaning up the above junk
-# Do it twice because YOLO
-pkill python
-killall python
-cd ~
-rm -rf serve cert.log
+DOMAINZ=$(echo $@ | sed -e "s/\ /\ -d\ /g")
+letsencrypt certonly --standalone --register-unsafely-without-email --agree-tos -d $DOMAINZ
 
 echo -e "${GREEN}[+]${RESET} Linking certs"
 echo 'Linking certificates'
@@ -101,7 +79,7 @@ ln -s /etc/letsencrypt/live/$1/privkey.pem $GOPATH/src/github.com/gophish/gophis
 
 
 cd $GOPATH/src/github.com/gophish/gophish
-./gophish &
+nohup ./gophish &
 sleep 3
 cd
 
